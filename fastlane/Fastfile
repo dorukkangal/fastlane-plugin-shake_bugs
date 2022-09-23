@@ -1,0 +1,15 @@
+lane :test do
+  shake_bugs_upload_proguard_mapping(
+    client_id: ENV['CLIENT_ID'],
+    client_secret: ENV['CLIENT_SECRET'],
+    mapping_file: 'assets/android/mapping.txt',
+    apk: 'assets/android/sample.apk'
+  )
+
+  shake_bugs_upload_dsym(
+    client_id: ENV['CLIENT_ID'],
+    client_secret: ENV['CLIENT_SECRET'],
+    dsym_file: 'assets/ios/sample.app.dSYM.zip',
+    ipa: 'assets/ios/sample.ipa'
+  )
+end
